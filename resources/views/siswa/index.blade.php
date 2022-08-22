@@ -13,7 +13,7 @@
         <h1 class="text-center">DATA SISWA</h1>
        <a class="btn btn-success" href="{{ route('siswasip.create')}}">Tambah</a>
         <br><br>
-        <div>
+        {{-- <div>
             @if ($message = Session::get('success'))
             <div class="alert alert-success " role="alert">
                 <div class="row">
@@ -22,7 +22,7 @@
                 </div>
               </div>
             @endif
-        </div>
+        </div> --}}
         <table id="datasiswa" class="table table-striped table-bordered text-center">
             <thead>
                 <tr>
@@ -43,13 +43,17 @@
                 <td>{{$siswa->tahunmasuk}}</td>
                 <td class="">
                      <form action="{{ route('siswasip.destroy', $siswa->nis)}}" method="POST">
+
  
-                         <a class="btn btn-success bi bi-pencil-fill" href="{{ route('siswasip.edit',$siswa->nis)}}"></a>
+                         <a class="btn btn-success bi bi-pencil-square" href="{{ route('siswasip.edit',$siswa->nis)}}"></a>
+
+                         <a class="btn btn-primary bi bi-card-text" href="{{ route('siswasip.show',$siswa->nis)}}"></a>
+
  
                          @csrf
                          @method('DELETE')
  
-                         <button class="btn btn-danger bi bi-trash-fill" type="submit"></button>
+                         <button class="btn btn-danger bi bi-trash" type="submit"></button>
                      
                      </form>
                  </td>

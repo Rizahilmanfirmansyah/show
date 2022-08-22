@@ -67,9 +67,10 @@ class SiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($nis)
     {
-        //
+        $siswa = siswa::where('nis',$nis)->first();
+        return view('siswa.detail', compact('siswa'));
     }
 
     /**

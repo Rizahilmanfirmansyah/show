@@ -9,8 +9,8 @@ class siswa extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $table = "siswa";
+    protected $table = "v_siswa";
     protected $fillable = [
-       'replid', 'nis', 'nama', 'aktif', 'tahunmasuk'
+       'replid','kelas','nis', 'nama', 'aktif', 'tahunmasuk'
     ];
 }
